@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>自由テーマ演習</title>
+        <style>
+            .game-board {
+                display: grid;
+                grid-template-rows: 200px 200px 200px 200px;
+                grid-template-columns: 200px 200px 200px 200px;
+            }
+            
+            body {
+            display: flex;
+            justify-content: center;
+            }
+
+            .box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="game-board">
+            <div class="box"><button onclick='func' id="btn0"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn1"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn2"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn3"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn4"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn5"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn6"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn7"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn8"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn9"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn10"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn11"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn12"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn13"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn14"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+            <div class="box"><button onclick='func' id="btn15"><img src="cards/0.png" widht="200px" height="200px"></button></div>
+        </div>
+        <script>
+            Card();
+            function Card() {
+                cards = [
+                    'cards/1.png', 'cards/1.png', 
+                    'cards/2.png', 'cards/2.png',
+                    'cards/3.png', 'cards/3.png',
+                    'cards/4.png', 'cards/4.png',
+                    'cards/5.png', 'cards/5.png',
+                    'cards/6.png', 'cards/6.png',
+                    'cards/7.png', 'cards/7.png',
+                    'cards/8.png', 'cards/8.png'
+                ];
+                let rand = [];
+                let i=0;
+                while(i<16){
+                    let n = Math.floor(Math.random() * 16);
+                    if(!sameNum(n)){
+                        rand.push(n)
+                        document.getElementById("btn"+i).src = "cards/1.png";
+                        i++;
+                    }
+                }
+                function sameNum(n){
+                    return rand.find((e) => (e===n));
+                }
+            }
+        </script>
+    </body>
+</html>
